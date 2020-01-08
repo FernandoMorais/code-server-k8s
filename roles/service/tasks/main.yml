@@ -1,0 +1,8 @@
+---
+
+- name: Creates the service
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'service.yml') }}"
+
+#EOF

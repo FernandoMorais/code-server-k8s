@@ -1,0 +1,8 @@
+---
+
+- name: Creates the deployment
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'deployment.yml') }}"
+
+#EOF

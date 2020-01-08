@@ -1,0 +1,8 @@
+---
+
+- name: Creates the namespace
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'namespace.yml') }}"
+
+#EOF

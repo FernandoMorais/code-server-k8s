@@ -1,0 +1,7 @@
+---
+
+k8s_namespace: 'code-server'
+k8s_service: 'code-server'
+k8s_app_label: 'code-server'
+
+#EOF

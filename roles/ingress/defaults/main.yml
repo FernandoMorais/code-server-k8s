@@ -1,0 +1,9 @@
+---
+
+k8s_namespace: 'code-server'
+k8s_ingress: 'code-server'
+k8s_ingress_host: 'localhost'
+k8s_ingress_cert: 'code-server-tls'
+k8s_service: 'code-server'
+
+#EOF

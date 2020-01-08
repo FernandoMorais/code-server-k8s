@@ -1,0 +1,8 @@
+---
+
+- name: Creates the certificate
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'cert.yml') }}"
+
+#EOF

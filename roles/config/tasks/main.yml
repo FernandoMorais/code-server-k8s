@@ -1,0 +1,8 @@
+---
+
+- name: Creates the config map
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'configmap.yml') }}"
+
+#EOF

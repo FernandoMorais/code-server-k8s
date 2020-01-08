@@ -1,0 +1,8 @@
+---
+
+k8s_namespace: 'code-server'
+k8s_config_map: 'code-server-config'
+
+code_server_password: 'P4s$w0rd'
+
+#EOF

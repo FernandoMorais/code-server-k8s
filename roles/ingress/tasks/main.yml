@@ -1,0 +1,8 @@
+---
+
+- name: Creates the ingress
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'ingress.yml') }}"
+
+#EOF

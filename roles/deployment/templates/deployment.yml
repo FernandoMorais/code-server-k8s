@@ -1,0 +1,39 @@
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: '{{ k8s_deployment }}'
+  labels:
+    app: '{{ k8s_app_label }}'
+  namespace: '{{ k8s_namespace }}'
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: '{{ k8s_app_label }}'
+    spec:
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+      containers:
+      - name: '{{ k8s_app_label }}'
+        image: codercom/code-server
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: '{{ k8s_config_map }}'
+      dnsPolicy: ClusterFirst
+
+#EOF
